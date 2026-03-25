@@ -197,7 +197,7 @@ export default function Book() {
               className="dialog-confirm-btn"
               variant="contained" 
               onClick={confirmSelection} 
-              disabled={selectedSeats.length === 0 || boardingStopIndex === ""}
+              disabled={selectedSeats.length === 0}
             >
               Confirm
             </Button>

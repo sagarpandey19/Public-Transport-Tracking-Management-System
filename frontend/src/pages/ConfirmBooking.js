@@ -1,6 +1,6 @@
 // src/pages/ConfirmBooking.jsx
 import React, { useState } from "react";
-import { Container, Typography, Card, CardContent, Button, Box, Divider, CircularProgress } from "@mui/material";
+import { Container, Typography, Card, CardContent, Button, Box, Divider, CircularProgress, Dialog, DialogContent } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { 
   CheckCircle, 
@@ -19,6 +19,7 @@ export default function ConfirmBooking() {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") || "null");
   const [loading, setLoading] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
 
   if (!state) {
     return (
@@ -48,7 +49,7 @@ export default function ConfirmBooking() {
     setLoading(true);
     try {
       const payload = {
-        userId: user._id,
+        userId: user.id || user._id,
         vehicleId: vehicle._id,
         routeId,
         seats: seatNumbers.length,
@@ -57,13 +58,18 @@ export default function ConfirmBooking() {
         boardingStop,
       };
       const res = await API.post("/bookings", payload);
-      navigate("/bookings");
+      setSuccessOpen(true);
     } catch (err) {
       console.error("Booking failed", err);
       alert("Booking failed. Please try again.");
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleSuccessClose = () => {
+    setSuccessOpen(false);
+    navigate("/bookings");
   };
 
   return (
@@ -219,6 +225,59 @@ export default function ConfirmBooking() {
           * This is a simulated payment. No actual charges will be made.
         </Typography>
       </Box>
+
+      {/* Success Popup */}
+      <Dialog
+        open={successOpen}
+        onClose={handleSuccessClose}
+        PaperProps={{
+          sx: {
+            borderRadius: "16px",
+            padding: "24px",
+            textAlign: "center",
+            minWidth: "340px",
+            background: "linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)",
+          },
+        }}
+      >
+        <DialogContent sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+          <CheckCircle
+            sx={{
+              fontSize: 72,
+              color: "#22c55e",
+              animation: "popIn 0.5s ease-out",
+              "@keyframes popIn": {
+                "0%": { transform: "scale(0)", opacity: 0 },
+                "60%": { transform: "scale(1.2)" },
+                "100%": { transform: "scale(1)", opacity: 1 },
+              },
+            }}
+          />
+          <Typography variant="h5" sx={{ fontWeight: 700, color: "#166534" }}>
+            Ticket Booked Successfully!
+          </Typography>
+          <Typography variant="body2" sx={{ color: "#4ade80", fontWeight: 500 }}>
+            Your seats have been reserved. Have a great journey!
+          </Typography>
+          <Button
+            variant="contained"
+            onClick={handleSuccessClose}
+            sx={{
+              mt: 1,
+              borderRadius: "10px",
+              textTransform: "none",
+              fontWeight: 600,
+              fontSize: "1rem",
+              px: 4,
+              py: 1,
+              background: "linear-gradient(135deg, #22c55e, #16a34a)",
+              "&:hover": { background: "linear-gradient(135deg, #16a34a, #15803d)" },
+            }}
+          >
+            View My Bookings
+          </Button>
+        </DialogContent>
+      </Dialog>
     </Container>
   );
 }

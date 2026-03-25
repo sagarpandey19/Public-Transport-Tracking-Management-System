@@ -36,7 +36,7 @@ export default function MyBookings() {
       return;
     }
 
-    API.get(`/bookings/user/${user._id}`)
+    API.get(`/bookings/user/${user._id || user.id}`)
       .then((res) => {
         setBookings(res.data);
         setLoading(false);
