@@ -27,12 +27,14 @@ const whitelist = [
   "https://public-transport-system-qydu.vercel.app",
   "http://localhost:3000",
   "http://localhost:5173",
-];
+].filter(Boolean);
 
 const corsOptions = {
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin || whitelist.indexOf(origin) !== -1) {
+    if (!origin) return callback(null, true);
+    // Allow any *.vercel.app preview deployment
+    if (origin.endsWith('.vercel.app') || whitelist.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       console.error(`[CORS Error] Blocked origin: ${origin}`);
@@ -94,6 +96,10 @@ io.on("connection", (socket) => {
 
 server.listen(PORT, () => console.log(`Server & Socket.IO running on port ${PORT}`));
 
+// Health-check route (used by Render)
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 
 // Better error handling for production
 app.use((err, req, res, next) => {
@@ -103,9 +109,4 @@ app.use((err, req, res, next) => {
     error: process.env.NODE_ENV === "development" ? err : {},
   });
 });
-
-app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
-});
-
 
