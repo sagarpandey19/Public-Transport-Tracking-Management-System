@@ -1,0 +1,34 @@
+ROUTES (10)
+============================================================
+OK(3) | Jalandhar -> Delhi | "Jalandhar ⇄ Delhi (Via Ludhiana)" | stops:5
+OK(1) | Jalandhar -> Chandigarh | "Jalandhar ⇄ Chandigarh" | stops:4
+OK(2) | Delhi -> Amritsar | "Delhi ⇄ Amritsar (Via Jalandhar)" | stops:5
+OK(3) | Chandigarh -> Shimla | "Chandigarh ⇄ Shimla" | stops:5
+OK(2) | Jalandhar -> Pathankot | "Jalandhar ⇄ Pathankot" | stops:5
+OK(1) | Delhi -> Jaipur | "Delhi ⇄ Jaipur" | stops:5
+OK(2) | Delhi -> Agra | "Delhi ⇄ Agra" | stops:4
+OK(2) | Delhi -> Chandigarh | "Delhi ⇄ Chandigarh Express" | stops:4
+OK(2) | Chandigarh -> Manali | "Chandigarh ⇄ Manali" | stops:5
+OK(1) | Delhi -> Ludhiana | "Delhi ⇄ Ludhiana" | stops:4
+
+VEHICLES (19)
+============================================================
+Volvo B9R (PB10A1001) -> Delhi ⇄ Jaipur
+Tata Starbus (PB10A2002) -> Chandigarh ⇄ Shimla
+Ashok Leyland AC (PB10A3003) -> Jalandhar ⇄ Pathankot
+Mercedes Benz MultiAxle (PB10A4004) -> Chandigarh ⇄ Shimla
+Eicher Skyline (DL01B5005) -> Chandigarh ⇄ Shimla
+Volvo 9400 (DL01B6006) -> Delhi ⇄ Ludhiana
+Tata LPO Bus (CH01C7007) -> Delhi ⇄ Agra
+Volvo B11R (CH01C8008) -> Jalandhar ⇄ Pathankot
+Scania Metrolink (RJ14D9009) -> Delhi ⇄ Agra
+Bharat Benz (UP16E1010) -> Jalandhar ⇄ Chandigarh
+Benz (KBKY567) -> Jalandhar ⇄ Delhi (Via Ludhiana)
+Volvo 9600 (PB08F2001) -> Jalandhar ⇄ Delhi (Via Ludhiana)
+Tata Marcopolo (PB08F2002) -> Jalandhar ⇄ Delhi (Via Ludhiana)
+Scania Metrolink HD (DL02G3001) -> Delhi ⇄ Amritsar (Via Jalandhar)
+Mercedes Tourismo (DL02G3002) -> Delhi ⇄ Amritsar (Via Jalandhar)
+Volvo B11R (DL04H4001) -> Delhi ⇄ Chandigarh Express
+Ashok Leyland Viking (DL04H4002) -> Delhi ⇄ Chandigarh Express
+Force Traveller (CH05I5001) -> Chandigarh ⇄ Manali
+Volvo B9R (CH05I5002) -> Chandigarh ⇄ Manali

@@ -1,0 +1,327 @@
+/* ConfirmBooking.css - Modern Checkout Experience */
+
+.checkout-container {
+  padding: 32px 16px;
+  min-height: 100vh;
+  padding-bottom: 120px; /* buffer for mobile floating bar */
+}
+
+.checkout-header {
+  text-align: left;
+  margin-bottom: 32px;
+  animation: fadeInDown 0.4s ease;
+}
+
+.checkout-title {
+  font-weight: 800 !important;
+  color: var(--color-gray-900);
+  margin-bottom: 4px !important;
+  letter-spacing: -0.5px;
+}
+
+.checkout-subtitle {
+  color: var(--color-gray-500);
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+}
+
+/* Base Cards */
+.checkout-card {
+  border-radius: 20px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  overflow: visible !important;
+  background: white !important;
+}
+
+.checkout-card .MuiCardContent-root {
+  padding: 32px !important;
+}
+
+.soft-divider {
+  margin: 24px 0 !important;
+  border-color: var(--color-border) !important;
+  border-style: dashed !important;
+}
+
+/* Left - Journey Details */
+.journey-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.route-tags {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.city-tag {
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+  color: var(--color-gray-900);
+}
+
+.route-arrow {
+  color: var(--color-gray-400);
+  font-size: 1.5rem !important;
+}
+
+.journey-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: var(--color-primary-600);
+  background: var(--color-primary-50);
+  padding: 6px 14px;
+  border-radius: 50px;
+}
+
+.vehicle-compact-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f9fafb;
+  padding: 16px 20px;
+  border-radius: 12px;
+}
+
+.vehicle-icon {
+  font-size: 32px !important;
+  color: var(--color-gray-600);
+}
+
+.vehicle-model {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: var(--color-gray-900);
+}
+
+.vehicle-reg {
+  font-size: 0.85rem !important;
+  color: var(--color-gray-500);
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Timeline */
+.journey-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timeline-stop {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.stop-label {
+  font-size: 0.8rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-gray-500);
+  font-weight: 700 !important;
+}
+
+.stop-name {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: var(--color-gray-900);
+  margin-top: 2px !important;
+}
+
+.timeline-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: 10px;
+  padding: 6px 0;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background: var(--color-gray-300);
+  border-radius: 50%;
+}
+
+/* Seats Chip view */
+.seats-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.seats-icon {
+  color: var(--color-gray-500);
+  font-size: 20px !important;
+}
+
+.seats-title {
+  font-weight: 700 !important;
+  color: var(--color-gray-800);
+  font-size: 1.1rem !important;
+}
+
+.seats-chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.seat-chip {
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  padding: 20px 8px !important;
+  border-radius: 10px !important;
+  border-width: 2px !important;
+}
+
+/* Right - Fare Summary & Payment */
+.sticky-summary {
+  position: sticky;
+  top: 24px;
+}
+
+.fare-card {
+  margin-bottom: 24px;
+}
+
+.fare-title {
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: var(--color-gray-900);
+  margin-bottom: 24px !important;
+}
+
+.fare-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.fare-label {
+  font-weight: 600 !important;
+  color: var(--color-gray-600);
+  font-size: 0.95rem !important;
+}
+
+.fare-value {
+  font-weight: 800 !important;
+  color: var(--color-gray-800);
+  font-size: 1.05rem !important;
+}
+
+.green-text {
+  color: var(--color-success-600) !important;
+}
+
+.total-row {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.fare-label.total {
+  font-size: 1.2rem !important;
+  color: var(--color-gray-900);
+}
+
+.fare-value.total {
+  font-size: 1.75rem !important;
+  color: var(--color-primary-600);
+  letter-spacing: -0.5px;
+}
+
+.premium-pay-btn {
+  height: 64px !important;
+  border-radius: 16px !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-800) 100%) !important;
+  box-shadow: 0 10px 30px rgba(216, 78, 85, 0.3) !important;
+  text-transform: none !important;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 32px !important;
+  margin-bottom: 16px !important;
+}
+
+.premium-pay-btn:hover:not(:disabled) {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(216, 78, 85, 0.4) !important;
+}
+
+.premium-pay-btn .btn-arrow {
+  font-size: 28px !important;
+  transition: transform 0.3s ease;
+}
+
+.premium-pay-btn:hover .btn-arrow {
+  transform: translateX(8px);
+}
+
+.secure-payment-note {
+  text-align: center;
+  font-size: 0.85rem !important;
+  color: var(--color-gray-500);
+  font-weight: 600 !important;
+  letter-spacing: 0.2px;
+}
+
+/* Base keyframes */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .checkout-container {
+    padding-top: 24px;
+    padding-bottom: 140px; /* Big buffer for fixed mobile bar */
+  }
+
+  .checkout-header {
+    text-align: center;
+  }
+
+  .journey-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* Extract the Pay Button to fixed drawer */
+  .payment-action-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    animation: fadeInUp 0.4s ease;
+  }
+  
+  .payment-action-wrapper .premium-pay-btn {
+    margin-bottom: 8px !important;
+  }
+}

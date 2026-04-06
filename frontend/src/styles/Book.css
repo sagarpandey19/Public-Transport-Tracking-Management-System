@@ -1,0 +1,558 @@
+/* ============================================
+   BOOK PAGE - PREMIUM REDBUS/UBER-STYLE DESIGN
+   ADVANCED UPGRADE
+   ============================================ */
+
+.book-page-wrapper {
+  min-height: 100vh;
+  background: var(--color-gray-50);
+  padding: 3rem 0;
+  font-family: var(--font-primary);
+}
+
+[data-theme="dark"] .book-page-wrapper {
+  background: var(--color-background-dark);
+}
+
+.book-container {
+  max-width: 1200px !important;
+  padding: 0 1.5rem !important;
+  margin: 0 auto;
+}
+
+/* ========== HEADER SECTION ========== */
+
+.book-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeInDown 0.6s var(--ease-out);
+}
+
+.book-title {
+  font-weight: 800 !important;
+  font-size: 2.5rem !important;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem !important;
+}
+
+.book-subtitle {
+  color: var(--color-text-secondary) !important;
+  font-size: 1.125rem !important;
+}
+
+/* ========== SEARCH FORM SECTION ========== */
+
+.form-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.7s var(--ease-out);
+}
+
+[data-theme="dark"] .form-section {
+  background: rgba(30, 35, 45, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.search-grid {
+  margin-top: 0.5rem;
+}
+
+.styled-input .MuiOutlinedInput-root {
+  background: var(--color-gray-50);
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 60px;
+}
+
+[data-theme="dark"] .styled-input .MuiOutlinedInput-root {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.styled-input .MuiOutlinedInput-notchedOutline {
+  border-color: var(--color-border) !important;
+  border-width: 1.5px !important;
+  transition: border-width 0.2s, border-color 0.2s;
+}
+
+.styled-input:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: var(--color-primary-400) !important;
+}
+
+.styled-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--color-primary-600) !important;
+  border-width: 2px !important;
+  box-shadow: 0 0 0 4px rgba(216, 78, 85, 0.15);
+}
+
+.styled-input .MuiInputBase-input {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--color-gray-900) !important;
+  letter-spacing: 0.2px;
+}
+
+/* Specific to Autocomplete, restore MUI native spacing but enhance text */
+.location-input .MuiAutocomplete-input {
+  /* Prevent extreme truncation from forced padding */
+  padding-left: 2px !important;
+}
+
+[data-theme="dark"] .styled-input .MuiInputBase-input {
+  color: var(--color-gray-50) !important;
+}
+
+/* Custom Adornment Icon spacing */
+.input-icon {
+  margin-right: 4px;
+}
+
+/* Fix overlapping label with StartAdornment specific to Autocomplete */
+.location-input .MuiInputLabel-root {
+  transform: translate(14px, -11px) scale(0.85) !important;
+  background-color: white;
+  padding: 0 8px;
+  font-weight: 600;
+  color: var(--color-primary-700);
+}
+
+.styled-input .MuiInputLabel-root[data-shrink="true"] {
+  background-color: white;
+  padding: 0 6px;
+  transform: translate(14px, -11px) scale(0.85) !important;
+  font-weight: 600;
+  color: var(--color-primary-700);
+}
+
+[data-theme="dark"] .styled-input .MuiInputLabel-root[data-shrink="true"] {
+  background-color: #1e232d;
+}
+
+[data-theme="dark"] .location-input .MuiInputLabel-root {
+  background-color: #1e232d;
+  color: var(--color-primary-400);
+}
+
+/* Dropdown list items styling */
+.MuiAutocomplete-listbox .MuiAutocomplete-option {
+  padding: 12px 18px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: var(--color-gray-800) !important;
+  transition: background 0.2s ease, color 0.2s ease !important;
+  border-radius: 8px;
+  margin: 4px 8px;
+}
+
+[data-theme="dark"] .MuiAutocomplete-listbox .MuiAutocomplete-option {
+  color: var(--color-gray-200) !important;
+}
+
+.MuiAutocomplete-listbox .MuiAutocomplete-option:hover,
+.MuiAutocomplete-listbox .MuiAutocomplete-option.Mui-focused,
+.MuiAutocomplete-listbox .MuiAutocomplete-option[aria-selected="true"] {
+  background-color: var(--color-primary-50) !important;
+  color: var(--color-primary-700) !important;
+}
+
+[data-theme="dark"] .MuiAutocomplete-listbox .MuiAutocomplete-option:hover,
+[data-theme="dark"] .MuiAutocomplete-listbox .MuiAutocomplete-option.Mui-focused,
+[data-theme="dark"] .MuiAutocomplete-listbox .MuiAutocomplete-option[aria-selected="true"] {
+  background-color: rgba(216, 78, 85, 0.15) !important;
+  color: var(--color-primary-400) !important;
+}
+
+/* Search Buses CTA Button */
+.search-buses-btn {
+  height: 60px !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-800) 100%) !important;
+  box-shadow: 0 8px 20px rgba(216, 78, 85, 0.3) !important;
+  text-transform: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.search-buses-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(216, 78, 85, 0.4) !important;
+}
+
+.search-buses-btn:disabled {
+  background: var(--color-gray-300) !important;
+  color: var(--color-gray-500) !important;
+  box-shadow: none !important;
+}
+
+.boarding-stop-wrapper {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--color-border);
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ========== EMPTY STATE ========== */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  animation: fadeIn 0.6s ease-out;
+}
+
+[data-theme="dark"] .empty-state {
+  background: rgba(30, 35, 45, 0.8);
+}
+
+.empty-state-img {
+  max-width: 320px;
+  margin-top: 2rem;
+  opacity: 0.9;
+}
+
+.empty-state h6 {
+  font-weight: 700 !important;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem !important;
+}
+
+/* ========== RESULTS SECTION ========== */
+
+.results-section {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.results-title {
+  font-weight: 800 !important;
+  margin-bottom: 1.5rem !important;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.results-title::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 28px;
+  background: var(--color-primary-600);
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+.premium-card {
+  border-radius: 16px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  background: white !important;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+[data-theme="dark"] .premium-card {
+  background: #232832 !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.premium-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(216, 78, 85, 0.3) !important;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-600), var(--color-primary-400));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.premium-card:hover::before {
+  opacity: 1;
+}
+
+.vehicle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.vehicle-title {
+  font-weight: 800 !important;
+  font-size: 1.25rem !important;
+  color: var(--color-text-primary);
+}
+
+.vehicle-reg-badge {
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid var(--color-gray-200);
+}
+
+[data-theme="dark"] .vehicle-reg-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-gray-300);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.vehicle-route {
+  color: var(--color-text-secondary) !important;
+  font-size: 0.95rem !important;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--color-border);
+  margin-bottom: 1rem !important;
+}
+
+/* Vehicle Time Grid */
+.vehicle-times-grid {
+  background: var(--color-gray-50);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .vehicle-times-grid {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.time-label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.7rem !important;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.time-value {
+  font-weight: 800 !important;
+  color: var(--color-text-primary);
+  font-size: 1.1rem !important;
+}
+
+.time-value.highlight-sub {
+  color: var(--color-primary-600);
+}
+
+.vehicle-details-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-label {
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  font-weight: 600 !important;
+  margin-bottom: 4px !important;
+}
+
+.detail-value {
+  font-weight: 700 !important;
+  color: var(--color-text-primary);
+  font-size: 1rem !important;
+}
+
+.detail-value.highlight-price {
+  color: var(--color-success-600);
+  font-size: 1.35rem !important;
+}
+
+.select-seats-btn {
+  height: 46px !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  background: var(--color-primary-600) !important;
+  box-shadow: 0 4px 12px rgba(216, 78, 85, 0.25) !important;
+  text-transform: none !important;
+}
+
+.select-seats-btn:hover {
+  background: var(--color-primary-700) !important;
+  box-shadow: 0 6px 16px rgba(216, 78, 85, 0.35) !important;
+}
+
+/* ========== MODAL & TRIP SUMMARY ========== */
+
+.premium-dialog .MuiDialog-paper {
+  border-radius: 24px !important;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.08) !important;
+  border: none !important;
+  overflow: hidden;
+}
+
+.dialog-title {
+  background: transparent;
+  color: var(--color-gray-900) !important;
+  font-weight: 800 !important;
+  padding: 2rem 2.5rem 1rem !important;
+  font-size: 1.75rem !important;
+  letter-spacing: -0.5px;
+}
+
+.trip-summary-panel {
+  background: var(--color-gray-50);
+}
+
+[data-theme="dark"] .trip-summary-panel {
+  background: rgba(30, 35, 45, 0.95) !important;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.summary-row .MuiTypography-body2 {
+  color: var(--color-text-secondary);
+}
+
+.summary-row .MuiTypography-body1 {
+  color: var(--color-text-primary);
+}
+
+.total-amount-box {
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-gray-100) 100%);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  border: 1px solid var(--color-gray-200);
+}
+
+[data-theme="dark"] .total-amount-box {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.dialog-actions {
+  background: white;
+  border-top: 1px solid var(--color-gray-100);
+  padding: 1.5rem 2.5rem !important;
+}
+
+[data-theme="dark"] .dialog-actions {
+  background: var(--color-background-dark);
+}
+
+.dialog-cancel-btn {
+  color: var(--color-text-secondary) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  padding: 0.625rem 1.5rem !important;
+  border-radius: 12px !important;
+  font-size: 1rem !important;
+}
+
+.dialog-confirm-btn {
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding: 0.75rem 2.5rem !important;
+  border-radius: 12px !important;
+  font-size: 1rem !important;
+  box-shadow: 0 8px 16px rgba(216, 78, 85, 0.25) !important;
+}
+
+.dialog-confirm-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(216, 78, 85, 0.35) !important;
+}
+
+.dialog-confirm-btn:disabled {
+  background: var(--color-gray-300) !important;
+  color: var(--color-gray-500) !important;
+  box-shadow: none !important;
+}
+
+.empty-seat-helper {
+  transition: all 0.3s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+.fade-in-section {
+  animation: fadeInUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform, opacity;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 900px) {
+  .trip-summary-panel {
+    border-top: 1px solid var(--color-border);
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-title {
+    font-size: 2rem !important;
+  }
+  .form-section {
+    padding: 1.5rem;
+  }
+  .search-buses-btn {
+    margin-top: 1rem;
+  }
+  .vehicle-details-grid {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .vehicle-times-grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .dialog-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .dialog-confirm-btn {
+    width: 100%;
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

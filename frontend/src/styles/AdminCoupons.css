@@ -1,0 +1,77 @@
+/* AdminCoupons.css */
+.admin-coupons-container {
+  padding: 32px 16px;
+  min-height: 100vh;
+}
+
+
+
+.admin-coupons-wrapper .MuiCard-root,
+.admin-coupons-dialog .MuiDialog-paper {
+  background-color: var(--admin-surface) !important;
+  color: var(--admin-text) !important;
+  border: 1px solid var(--admin-border) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.admin-coupons-wrapper .MuiTableCell-root {
+  color: var(--admin-text) !important;
+  border-bottom: 1px solid var(--admin-border) !important;
+}
+
+.admin-coupons-wrapper .MuiTypography-root,
+.admin-coupons-dialog .MuiDialogTitle-root {
+  color: var(--admin-text) !important;
+}
+
+.admin-coupons-dialog .MuiOutlinedInput-root {
+  color: var(--admin-text) !important;
+}
+
+.admin-coupons-dialog .MuiOutlinedInput-notchedOutline {
+  border-color: var(--admin-border) !important;
+}
+
+.admin-coupons-dialog .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #64748b !important;
+}
+
+.admin-coupons-dialog .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--color-primary-500, #3b82f6) !important;
+}
+
+.admin-coupons-dialog .MuiInputLabel-root {
+  color: var(--admin-text-secondary, #94a3b8) !important;
+}
+
+.admin-coupons-dialog .MuiInputLabel-root.Mui-focused {
+  color: var(--color-primary-500, #3b82f6) !important;
+}
+
+/* Fix dark mode date picker icon */
+.admin-coupons-dialog input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(0.8);
+  cursor: pointer;
+}
+
+.admin-coupons-wrapper .MuiChip-root {
+  border-color: var(--admin-border) !important;
+}
+
+.MuiMenu-paper {
+  background-color: var(--admin-surface-2) !important;
+  color: var(--admin-text) !important;
+  border: 1px solid var(--admin-border) !important;
+}
+
+.MuiMenuItem-root {
+  color: var(--admin-text) !important;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: var(--admin-surface-3, rgba(255, 255, 255, 0.1)) !important;
+}
+
+.admin-coupons-dialog .MuiDialogActions-root {
+  border-top: 1px solid var(--admin-border) !important;
+}
