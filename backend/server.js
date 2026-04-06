@@ -24,6 +24,7 @@ const app = express();
 // CORS Whitelist (Authorized origins)
 const whitelist = [
   process.env.FRONTEND_URL,
+  "https://public-transport-tracking-managemen-lovat.vercel.app",
   "https://public-transport-system-qydu.vercel.app",
   "http://localhost:3000",
   "http://localhost:5173",
