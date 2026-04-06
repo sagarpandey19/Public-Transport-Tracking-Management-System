@@ -84,7 +84,10 @@ export default function AdminDashboard() {
     fetchAllData();
 
     // Connect to global Socket.IO backend (Strip /api off URL)
-    const baseServerUrl = (process.env.REACT_APP_API_URL || "").replace("/api", "");
+    const PROD_BACKEND = "https://public-transport-system-8yox.onrender.com";
+    const baseServerUrl = process.env.REACT_APP_API_URL 
+      ? process.env.REACT_APP_API_URL.replace("/api", "") 
+      : (process.env.NODE_ENV === "production" ? PROD_BACKEND : "http://localhost:5000");
     const socket = io(baseServerUrl);
 
     socket.on("sos_alert", (payload) => {

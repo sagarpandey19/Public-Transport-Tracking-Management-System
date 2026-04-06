@@ -104,7 +104,8 @@ export default function ConfirmBooking() {
       // 1. Create Razorpay Order in Backend
       console.log("[Payment] Calling backend to create order...");
       
-      const apiBaseURL = process.env.REACT_APP_API_URL || process.env.VITE_API_URL || "http://localhost:5000/api";
+      const PROD_API_URL = "https://public-transport-system-8yox.onrender.com/api";
+      const apiBaseURL = process.env.REACT_APP_API_URL || (process.env.NODE_ENV === "production" ? PROD_API_URL : "http://localhost:5000/api");
       console.log("[Payment] Using API Base URL:", apiBaseURL);
 
       const orderRes = await API.post("/payments/create-order", {

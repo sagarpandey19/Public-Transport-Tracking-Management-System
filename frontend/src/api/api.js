@@ -1,7 +1,10 @@
 import axios from "axios";
 
+// Production backend URL (Render)
+const PROD_API_URL = "https://public-transport-system-8yox.onrender.com/api";
+
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000/api",
+  baseURL: process.env.REACT_APP_API_URL || (process.env.NODE_ENV === "production" ? PROD_API_URL : "http://localhost:5000/api"),
   withCredentials: true,
   timeout: 30000, // 30s timeout for Render cold starts
 });

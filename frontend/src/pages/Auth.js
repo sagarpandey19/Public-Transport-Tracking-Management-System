@@ -87,8 +87,11 @@ const Auth = ({ setUser }) => {
   };
 
   const handleGoogleLogin = () => {
-    const backendUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-    window.location.href = `${backendUrl}/auth/google`;
+    const PROD_BACKEND = "https://public-transport-system-8yox.onrender.com";
+    const backendUrl = process.env.REACT_APP_API_URL
+      ? process.env.REACT_APP_API_URL.replace("/api", "")
+      : (process.env.NODE_ENV === "production" ? PROD_BACKEND : "http://localhost:5000");
+    window.location.href = `${backendUrl}/api/auth/google`;
   };
 
   const switchTab = (toLogin) => {
